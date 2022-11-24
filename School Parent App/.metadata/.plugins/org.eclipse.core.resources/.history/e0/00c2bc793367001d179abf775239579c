@@ -1,0 +1,5 @@
+package com.SchoolParent.Staff.Controller.Advice;
+
+public class GenaralExceptionalHandler {
+
+}

@@ -1,0 +1,42 @@
+package com.SchoolParent.Staff.ControllerTest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.SchoolParent.Staff.Controller.StaffController;
+import com.SchoolParent.Staff.Entity.Staff;
+import com.SchoolParent.Staff.Service.StaffService;
+import com.SchoolParent.Staff.Service.StaffServiceImpl;
+
+@SpringBootTest
+public class StaffControllerTest {
+
+	@InjectMocks
+	StaffController staffController;
+
+	@Mock
+	StaffServiceImpl staffservice;
+
+	@Test
+	public void saveTest() {
+		Staff staff = new Staff();
+
+		staff.setInformationText("Tomorrow is Holiday");
+		staff.setNotificationDate(null);
+		staff.setNotificationPostedBy("Kamalakar");
+		ResponseEntity response = new ResponseEntity("Notification posted Successfully", HttpStatus.OK);
+		Staff staff2 = staffservice.save(staff);
+
+		when(staffservice.save(staff)).thenReturn(staff);
+		ResponseEntity response2 = staffController.save(staff);
+		assertEquals(response2.getBody(), response2.getBody());
+	}
+
+}

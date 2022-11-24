@@ -1,0 +1,5 @@
+package com.SchoolParent.Parent.Response;
+
+public class MessageResponse {
+
+}

@@ -1,0 +1,16 @@
+package com.SchoolParent.Staff.Controller.Advicetest;
+
+import org.mockito.InjectMocks;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.SchoolParent.Staff.Controller.Advice.GenaralExceptionalHandler;
+
+@SpringBootTest
+public class ControllerAdviceTest {
+	
+	@InjectMocks
+	GenaralExceptionalHandler exceptionalHandler;
+	
+	
+
+}

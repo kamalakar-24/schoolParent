@@ -1,0 +1,182 @@
+package com.SchoolParent.Parent.Entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "Parent")
+public class Parent {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Size(min=10,max=10)
+	private String studentRegistrationId;
+
+	@NotBlank
+	private String parentName;
+
+	@NotBlank
+	private String studentName;
+
+	@NotBlank
+	private String address;
+
+	@NotBlank
+	private String country;
+
+	@NotBlank
+	private String city;
+
+	@NotBlank
+	private Integer studentAge;
+
+	@NotBlank
+	private LocalDate registrationDate;
+
+	@NotBlank
+	@Size(min = 6, max = 6)
+	private Integer zipCode;
+
+	@NotBlank
+	@Email
+	private String emailAddress;
+
+	@NotBlank
+	private String primaryContactPerson;
+
+	@NotBlank
+	@Size(min = 10, max = 10)
+	private Integer primaryContactPersonMobile;
+
+	@NotBlank
+	private String secondaryContactPerson;
+
+	@NotBlank
+	
+	private Integer secondaryContactPersonMobile;
+
+	public String getStudentRegistrationId() {
+		return studentRegistrationId;
+	}
+
+	public void setStudentRegistrationId(String studentRegistrationId) {
+		this.studentRegistrationId = studentRegistrationId;
+	}
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+	public String getStudentName() {
+		return studentName;
+	}
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public Integer getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(Integer zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
+
+	public String getPrimaryContactPerson() {
+		return primaryContactPerson;
+	}
+
+	public void setPrimaryContactPerson(String primaryContactPerson) {
+		this.primaryContactPerson = primaryContactPerson;
+	}
+
+	public Integer getPrimaryContactPersonMobile() {
+		return primaryContactPersonMobile;
+	}
+
+	public void setPrimaryContactPersonMobile(Integer primaryContactPersonMobile) {
+		this.primaryContactPersonMobile = primaryContactPersonMobile;
+	}
+
+	public String getSecondaryContactPerson() {
+		return secondaryContactPerson;
+	}
+
+	public void setSecondaryContactPerson(String secondaryContactPerson) {
+		this.secondaryContactPerson = secondaryContactPerson;
+	}
+
+	public Integer getSecondaryContactPersonMobile() {
+		return secondaryContactPersonMobile;
+	}
+
+	public void setSecondaryContactPersonMobile(Integer secondaryContactPersonMobile) {
+		this.secondaryContactPersonMobile = secondaryContactPersonMobile;
+	}
+
+	public Integer getStudentAge() {
+		return studentAge;
+	}
+
+	public void setStudentAge(Integer studentAge) {
+		this.studentAge = studentAge;
+	}
+
+	public LocalDate getRegistrationDate() {
+		return registrationDate;
+	}
+
+	public void setRegistrationDate(LocalDate registrationDate) {
+		this.registrationDate = registrationDate;
+	}
+
+}

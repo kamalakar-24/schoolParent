@@ -1,0 +1,42 @@
+package com.SchoolParent.Parent.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.SchoolParent.Parent.Entity.Parent;
+import com.SchoolParent.Parent.Repository.ParentRepository;
+
+@Service
+public class ParentServiceImpl implements ParentService {
+
+	@Autowired
+	ParentRepository parentRepository;
+
+	@Override
+	public Parent saveParent(Parent parent) {
+		return parentRepository.save(parent);
+	}
+
+	@Override
+	public Parent update(Parent stdId) {
+		Optional<Parent> list = parentRepository.findById(stdId.getStudentRegistrationId());
+		if (list.get().getStudentRegistrationId() == stdId.getStudentRegistrationId()) {
+			return parentRepository.save(stdId);
+		}
+		return stdId;
+	}
+
+	@Override
+	public List<Parent> getAllStudents() {
+		return parentRepository.findAll();
+	}
+
+	Boolean isAgeGreaterthanFour(Long stdAge) {
+		return	parentRepository.isAgeGreaterthanFour(stdAge);
+		 
+		
+	}
+}

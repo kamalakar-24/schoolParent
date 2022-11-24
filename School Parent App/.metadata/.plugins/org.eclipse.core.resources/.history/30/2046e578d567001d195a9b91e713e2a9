@@ -1,0 +1,33 @@
+package com.SchoolParent.Parent.ControllerTest;
+
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
+
+import com.SchoolParent.Parent.Controller.ParentController;
+import com.SchoolParent.Parent.Entity.Parent;
+import com.SchoolParent.Parent.Repository.ParentRepository;
+import com.SchoolParent.Parent.Service.ParentServiceImpl;
+
+@SpringBootTest
+public class ParentControllerTest {
+	
+	@InjectMocks
+	ParentController parentController;
+	
+	@Mock
+	ParentServiceImpl parentService;
+	
+//	@Test
+//	public void updateTest() {
+//		ResponseEntity parent = null
+//		
+//		parent.setStudentRegistrationId(2L);
+//		when(parentController.update(parent )).thenReturn(parent);
+//	}
+
+}

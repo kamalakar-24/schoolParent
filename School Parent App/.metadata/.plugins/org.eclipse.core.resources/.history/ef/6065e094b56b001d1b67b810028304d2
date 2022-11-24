@@ -1,0 +1,17 @@
+package com.SchoolParent.Parent.Service;
+
+import java.util.List;
+
+import com.SchoolParent.Parent.Entity.Parent;
+
+public interface ParentService {
+
+	Parent saveParent(Parent parent);
+
+	Parent update(Parent stdId);
+
+	List<Parent> getAllStudents();
+	
+	
+
+}

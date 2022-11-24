@@ -1,0 +1,47 @@
+package com.SchoolParent.Parent.Controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.SchoolParent.Parent.Entity.Parent;
+import com.SchoolParent.Parent.Service.ParentService;
+
+@CrossOrigin
+@RestController
+@RequestMapping("/parent")
+public class ParentController {
+
+	@Autowired
+	ParentService parentService;
+
+	@PostMapping("/saveParent")
+	public ResponseEntity<?> save(Parent parent) {
+		Parent data = parentService.save(parent);
+		ResponseEntity response = new ResponseEntity("Submitted", HttpStatus.OK);
+		return response;
+	}
+
+	@PutMapping("/updateParent")
+	public ResponseEntity update(Parent stdId) {
+		Parent update2 = parentService.update(stdId);
+		ResponseEntity response = new ResponseEntity("Upadated Successfully", HttpStatus.OK);
+		return response;
+
+	}
+
+	@GetMapping("/getAll")
+	public List<Parent> getll() {
+		return parentService.getAllStudents();
+
+	}
+
+}

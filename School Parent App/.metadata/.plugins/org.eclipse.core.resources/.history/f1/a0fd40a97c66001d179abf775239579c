@@ -1,0 +1,23 @@
+package com.SchoolParent.Parent.Controller.Advice;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.SchoolParent.Parent.Response.ErrorResponse;
+
+@RestControllerAdvice
+public class GenaralExceptionalHandler {
+
+	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+	@ExceptionHandler(Exception.class)
+	public ErrorResponse handleException(Exception exe) {
+		ErrorResponse r = new ErrorResponse();
+		r.setErrorcode("Genaral");
+		r.setDescription(exe.getMessage());
+		r.setException(exe);
+		return r;
+	}
+
+}
